@@ -8,3 +8,4 @@ d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\o
 d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.pdb
 d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.Form1.resources
 d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\bin\Debug\veci_ktere_potrebuju\mapa.txt
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\bin\Debug\veci_ktere_potrebuju\hardblock.png

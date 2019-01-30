@@ -13,11 +13,14 @@ namespace MyFirstGameAttempt
 {
     public partial class Form1 : Form
     {
+        Hrdina Player1;
+        public int delete = 0; //TODO tohle smaz
         StreamReader soubormapa;
         int velikostmapy; //pocet bloku na jedne strane ctverce mapy 
         int velikostctverecku;
         int vyska;
         int sirka;
+        public List<PictureBox> SeznamPictureBoxu;
 
         public Form1()
         {
@@ -62,7 +65,7 @@ namespace MyFirstGameAttempt
                 Minimum = ClientSize.Width;
             }
             else Minimum = ClientSize.Height;
-            return (int)(velikostmapy / Minimum);
+            return (int)(Minimum / velikostmapy);
         }
 
         public Point DejMiLevyHorniRohMapy()
@@ -84,10 +87,11 @@ namespace MyFirstGameAttempt
         public void NactiMapuZeSouboru()
         {
             Point levyhornirohmapy = DejMiLevyHorniRohMapy();
-            velikostmapy = DEJCISLO(soubormapa);
+            velikostmapy = 10; //TODO upravit na obecne nectvercove rozmery
             velikostctverecku = DejMiVelikostCtverceVPixelech();
             sirka = int.Parse(soubormapa.ReadLine());
             vyska = int.Parse(soubormapa.ReadLine());
+            SeznamPictureBoxu = new List<PictureBox>();
 
             for (int y = 0; y < vyska; y++)
             {
@@ -95,22 +99,91 @@ namespace MyFirstGameAttempt
                 for (int x = 0; x < sirka; x++)
                 {
                     char znak = radek[x];
+                    Point pomocnybod = new Point();
+                    pomocnybod.X = levyhornirohmapy.X + velikostctverecku*x;
+                    pomocnybod.Y = levyhornirohmapy.Y + velikostctverecku*y;
                     switch (znak)
                     {
                         case '1'://Player1
+                            Player1 = new Hrdina(pomocnybod, velikostctverecku);
+                            this.Controls.Add(Player1);
                             break;
                         case 'H'://hardblock
+                            HardBlock hardblock = new HardBlock(pomocnybod,velikostctverecku);
+                            SeznamPictureBoxu.Add(hardblock);
+                            this.Controls.Add(hardblock);
                             break;
                         case 'S'://softblock
                             break;
                         case 'N'://none
                             break;
-                            //TODO pridat dalsi moznosti bloku
+                            //TODO pridat dalsi moznosti
                         default:
                             break;
                     }
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode) //TODO vymysli rychlost pohybu... na velkem platne bude 5px pomalych
+                    //TODO mozna by bylo lepsi kdyby to cele obsluhovala nejaka funkce, ktera bude kontrolovat kam se pohybovat da a kam ne
+            {
+                case Keys.Up:
+                    Player1.Top -= 5;
+                    break;
+                case Keys.Down:
+                    Player1.Top += 5;
+                    break;
+                case Keys.Left:
+                    Player1.Left -= 5;
+                    break;
+                case Keys.Right:
+                    Player1.Left += 5;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    public abstract class NepohyblivePrvky : PictureBox
+    {
+
+    }
+
+    public abstract class PohyblivePrvky : PictureBox
+    {
+
+    }
+
+    public class Hrdina : PohyblivePrvky
+    {
+        public Hrdina(Point souradnice,int velikostctverecku)
+        {
+            Location = souradnice;
+            this.Image = Properties.Resources.Old_hero;
+            this.Height = velikostctverecku;
+            this.Width = velikostctverecku;
+            this.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+    }
+
+    public class HardBlock : NepohyblivePrvky
+    {
+        public HardBlock(Point souradnice,int velikostctverecku)
+        {
+            Location = souradnice;
+            this.Image = Properties.Resources.hardblock;
+            this.Height = velikostctverecku;
+            this.Width = velikostctverecku;
+            this.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

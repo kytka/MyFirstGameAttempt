@@ -1,0 +1,10 @@
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\bin\Debug\MyFirstGameAttempt.exe.config
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\bin\Debug\MyFirstGameAttempt.exe
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\bin\Debug\MyFirstGameAttempt.pdb
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.csprojResolveAssemblyReference.cache
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.Properties.Resources.resources
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.csproj.GenerateResource.Cache
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.exe
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.pdb
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\obj\Debug\MyFirstGameAttempt.Form1.resources
+d:\dokumenty\visual studio 2013\Projects\MyFirstGameAttempt\MyFirstGameAttempt\bin\Debug\veci_ktere_potrebuju\mapa.txt
